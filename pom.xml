@@ -28,10 +28,13 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
+                    <includes>
+                        <include>**/tp014/**</include>
+                    </includes>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>Toto</mainClass>
+                            <mainClass>fr.aseure.tp014.ex1.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
