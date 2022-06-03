@@ -2,14 +2,24 @@ package fr.aseure.tp013.ex1;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class App {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
+
+        {
+            var c = new Counter();
+
+            var start = Instant.now();
+            var i1 = c.call();
+            var i2 = c.call();
+
+            System.out.printf("Future returned %d\n", i1);
+            System.out.printf("Future returned %d\n", i2);
+            System.out.printf("Took %s\n", Duration.between(start, Instant.now()));
+            System.out.println();
+        }
 
         // Answer 1
         //
